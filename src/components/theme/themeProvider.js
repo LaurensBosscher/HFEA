@@ -8,7 +8,7 @@ import { styles } from '../../custom/styles/styles';
 
 class ThemeProvider extends React.Component {
   state = {
-    isDarkThemeActive: window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+    isDarkThemeActive: false
   };
 
   componentDidMount() {
@@ -16,7 +16,9 @@ class ThemeProvider extends React.Component {
   }
 
   retrieveActiveTheme = () => {
-    const isDarkThemeActive = JSON.parse(window.localStorage.getItem('isDarkThemeActive'));
+    const browserHasDarkTheme = window && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+
+    const isDarkThemeActive = JSON.parse(window.localStorage.getItem('isDarkThemeActive')) ||  browserHasDarkTheme;
 
     this.setState({ isDarkThemeActive });
   };

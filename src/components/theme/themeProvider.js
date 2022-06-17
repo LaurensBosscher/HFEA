@@ -8,7 +8,7 @@ import { styles } from '../../custom/styles/styles';
 
 class ThemeProvider extends React.Component {
   state = {
-    isDarkThemeActive: false,
+    isDarkThemeActive: window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
   };
 
   componentDidMount() {

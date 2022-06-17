@@ -95,6 +95,7 @@ const calculateTreeData = edges => {
         prevItems = tmp.items;
       }
     }
+    
     // sort items alphabetically.
     prevItems.map(item => {
       item.items = item.items.sort(function(a, b) {
@@ -103,6 +104,7 @@ const calculateTreeData = edges => {
         return 0;
       });
     });
+    
     const slicedLength =
       config.gatsby && config.gatsby.trailingSlash ? parts.length - 2 : parts.length - 1;
 

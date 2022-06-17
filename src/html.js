@@ -27,7 +27,7 @@ export default class HTML extends React.Component {
           {this.props.preBodyComponents}
           <div key={`body`} id="___gatsby" dangerouslySetInnerHTML={{ __html: this.props.body }} />
           {this.props.postBodyComponents}
-          <script
+          {/* <script
             defer
             dangerouslySetInnerHTML={{
               __html: `
@@ -41,7 +41,7 @@ export default class HTML extends React.Component {
            });
             `,
             }}
-          />
+          /> */}
         </body>
       </html>
     );

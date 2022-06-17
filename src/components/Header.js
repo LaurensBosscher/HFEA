@@ -31,13 +31,13 @@ const LoadableComponent = Loadable({
 });
 
 function myFunction() {
-  var x = document.getElementById('navbar');
+  // var x = document.getElementById('navbar');
 
-  if (x.className === 'topnav') {
-    x.className += ' responsive';
-  } else {
-    x.className = 'topnav';
-  }
+  // if (x.className === 'topnav') {
+  //   x.className += ' responsive';
+  // } else {
+  //   x.className = 'topnav';
+  // }
 }
 
 const StyledBgDiv = styled('div')`
@@ -92,10 +92,12 @@ const Header = ({ location, isDarkThemeActive, toggleActiveTheme }) => (
 
       const finalLogoLink = logo.link !== '' ? logo.link : 'https://hasura.io/';
 
+      return (<div className=""></div>)
+
       return (
         <div className={'navBarWrapper'}>
           <nav className={'navBarDefault'}>
-            <div className={'navBarHeader'}>
+            {/* <div className={'navBarHeader'}>
               <Link to={finalLogoLink} className={'navBarBrand'}>
                 <img
                   className={'img-responsive displayInline'}
@@ -107,7 +109,7 @@ const Header = ({ location, isDarkThemeActive, toggleActiveTheme }) => (
                 className={'headerTitle displayInline'}
                 dangerouslySetInnerHTML={{ __html: headerTitle }}
               />
-            </div>
+            </div> 
             {config.header.social ? (
               <ul
                 className="socialWrapper visibleMobileView"
@@ -119,6 +121,7 @@ const Header = ({ location, isDarkThemeActive, toggleActiveTheme }) => (
                 <LoadableComponent collapse={true} indices={searchIndices} />
               </div>
             ) : null}
+            */}
             <div id="navbar" className={'topnav'}>
               <div className={'visibleMobile'}>
                 <Sidebar location={location} />
